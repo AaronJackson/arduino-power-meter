@@ -1,0 +1,28 @@
+* Simple Arduino Power Meter
+
+This is a *very* simple hack to monitor your electricity
+consumption. Somewhere on your power meter, there will probably be an
+LED that flashes periodically. Also on your meter, will be a note
+explaining how many times it flashes per kWh consumed. Mine is 3200
+impressions per kWh. You'll likely want to modify this value, unless
+it happens to be the same.
+
+"Electrically" there isn't much going on.
+
+#+BEGIN_SRC
+
+    --------------- PIN A0
+    |
+    /
+LDR \
+    /
+    |
+    --------------- 3.3v
+#+END_SRC
+
+The code enables the Arduino's internal pull up resistor. The min and
+max values are automatically detected, and the threshold for a pulse
+is set as being in between those two points.
+
+That is all. Have fun. :)
+
